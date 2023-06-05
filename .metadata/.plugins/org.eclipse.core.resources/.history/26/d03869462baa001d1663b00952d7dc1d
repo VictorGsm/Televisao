@@ -1,0 +1,105 @@
+package televisão;
+
+import java.util.Scanner;
+
+public class Tv {
+	static int n, quantidade=0,quantidadem=5;
+	static String nome[] = new String[5];
+	boolean status;
+	public static void main(String[] args) {
+		int escolha=0;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("1- Acessar o menu");
+		System.out.println("2- Sair");
+		escolha = sc.nextInt();
+		switch(escolha) {
+		case 1:
+			start(sc);
+			break;
+		
+		case 2:
+			break;
+		}
+		sc.close();
+	}
+		public static void start(Scanner sc) {
+			int escolha=0,n;
+			String status;
+			System.out.println("1 - Adicionar TV");
+			System.out.println("2-  Remover TV");
+			System.out.println("3 - Alterar volume");
+			System.out.println("4 - Alterar canal");
+			System.out.println("5 - Ligar/Desligar");
+			System.out.println("6 - Listagem ");
+			System.out.println("7 - Sair");
+			escolha = sc.nextInt();
+			switch(escolha) {
+			
+			case 1:
+				criartv(sc);
+				break;
+			
+			case 2:
+				
+			case 3:
+				setvolume(sc);
+				break;
+			
+			case 6:
+				break;
+			default: System.out.println("Opção inválida!");
+			}
+		}
+		public static void criartv(Scanner sc) {
+			int aux=0;
+			System.out.println("Quantas televisões deseja adicionar?");
+			System.out.println("Quantidade restante: "+quantidadem);
+			quantidade = sc.nextInt();
+			aux = quantidade;
+			//Condicionais para acesso
+			if(quantidade<=0) {
+			start(sc);	
+			}
+			while(quantidade>5) {
+				System.out.println("A quantidade máxima por residência é de 5 TVs");
+				System.out.println("Selecione novamente");
+				quantidade = sc.nextInt();
+			}
+			//fim das condicionais
+			while(aux!=0) {
+				System.out.println("Qual o nome da Tv para cadastro?");
+				sc.nextLine();
+				nome[n] = sc.nextLine();
+				aux--;
+				n++;
+				quantidade++;
+				if(aux==0) {
+					start(sc);
+				}
+			}	
+		}
+		//Remover Tv
+		public static void removertv(Scanner sc) {
+			
+		}
+		//Alterar volume
+		public static void setvolume(Scanner sc) {
+			int volume[] = new int[5];
+			System.out.println("Qual o número da TV selecionada?");
+			n = sc.nextInt();
+			System.out.println("Selecione o volume");
+			volume[n] = sc.nextInt();
+			while (volume[n]>100 || volume[n]<0) {
+				System.out.println("O volume máximo é 100 e mínimo 0");
+				System.out.println("Por favor digite novamente");
+				volume[n] = sc.nextInt();
+			}
+		}
+		
+		public static void lista(Scanner sc) {
+			System.out.println();
+		}
+		
+		
+		
+}

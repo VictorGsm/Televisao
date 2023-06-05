@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\victo\OneDrive\Área de Trabalho\Atividades 3º Semestre\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+4048340927.index
+2946248135.index
